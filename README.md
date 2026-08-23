@@ -93,15 +93,18 @@ All chat messages are stored in MySQL so conversations remain available even aft
 
 ### Login
 
-_Add screenshot_
+<img width="943" height="877" alt="image" src="https://github.com/user-attachments/assets/65e52729-8a77-46d9-9eb2-bf0a310237ac" />
+
 
 ### Group Chat
 
-_Add screenshot_
+<img width="1809" height="635" alt="image" src="https://github.com/user-attachments/assets/244f8db7-533a-4d64-aec9-ecb0ba6d164d" />
+
 
 ### Private Chat
 
-_Add screenshot_
+<img width="1515" height="257" alt="image" src="https://github.com/user-attachments/assets/e07787ea-294f-4259-a24b-d997807f656a" />
+
 
 ## What I Learned
 
