@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+@import "tailwindcss";
+
+/* ── Tailwind v4 Theme – Dark ── */
+@theme {
+  --color-brand: #3b82f6;
+  --color-brand-hover: #2563eb;
+  --color-brand-glow: #3b82f63d;
+  --color-brand-glow-lg: #3b82f64d;
+  --color-brand-subtle: #3b82f61a;
+
+  --color-dark: #dfe2e8;
+  --color-dark-heading: #eef0f4;
+  --color-dark-text: #dfe2e8;
+  --color-dark-sidebar: #0c0e14;
+  --color-dark-sidebar-light: #8a91a3;
+
+  --color-muted: #929ab0;
+  --color-muted-light: #6d7587;
+  --color-muted-lighter: #565e70;
+  --color-muted-lightest: #3c4352;
+  --color-muted-label: #6d7587;
+  --color-muted-header: #6d7587;
+  --color-muted-border: #23262f;
+  --color-muted-divider: #1b1e26;
+  --color-muted-time: #565e70;
+
+  --color-surface: #0e1015;
+  --color-surface-blue: #0d0f16;
+  --color-surface-grid: #191c24;
+  --color-surface-msg: #171920;
+  --color-surface-hover: #191c24;
+  --color-surface-sidebar-hover: #ffffff0a;
+  --color-surface-sidebar-border: #ffffff0e;
+  --color-surface-chat: #111319;
+  --color-surface-input: #15171e;
+
+  --color-error: #ef4444;
+  --color-success: #22c55e;
+  --color-online: #22c55e;
+  --color-online-dot: #22c55e;
+  --color-online-count: #4ade80;
+
+  --color-avatar-violet: #7c3aed;
+  --color-avatar-green: #059669;
+  --color-avatar-orange: #d97706;
+  --color-avatar-pink: #db2777;
+  --color-avatar-dark: #374151;
+  --color-avatar-blue: #3b82f6;
+
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+/* ── Base ── */
+:root {
+  font-family: var(--font-body);
+  color: var(--color-dark);
+  background: #0a0c10;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+a { color: inherit; }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #282b34; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #363940; }
+
+/* ── Auth Atmosphere (complex clip-path + grid pattern) ── */
+.auth-atmosphere {
+  position: absolute;
+  inset: 0;
+  background: var(--color-surface-blue);
+  clip-path: polygon(0 0, 48% 0, 39% 100%, 0 100%);
+}
+
+.auth-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.12;
+  background-image:
+    linear-gradient(var(--color-surface-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-surface-grid) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(135deg, #000, transparent 70%);
+}
+
+/* ── Animations ── */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-spin-fast {
+  animation: spin 0.7s linear infinite;
+}
+
+.animate-toast-in {
+  animation: toast-in 0.2s ease-out;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out;
+}
+
+/* ── Visually hidden file input ── */
+.file-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ── Mobile overrides ── */
+@media (max-width: 760px) {
+  .auth-atmosphere {
+    clip-path: polygon(0 0, 100% 0, 100% 25%, 0 38%);
+  }
+}
